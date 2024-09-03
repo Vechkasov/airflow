@@ -2,7 +2,8 @@ version: '3.7'
 
 x-airflow-common:
   &airflow-common
-  image: ${AIRFLOW_IMAGE_NAME:-airflow-image}
+  # image: ${AIRFLOW_IMAGE_NAME:-airflow-image}
+  build: .
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor

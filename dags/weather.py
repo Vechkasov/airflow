@@ -1,7 +1,6 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.models import Variable
-from airflow.utils.dates import days_ago
 
 
 import datetime
@@ -13,7 +12,7 @@ default_args = {
     'owner': 'airflow',
     'depends_on_past': True,
     'start_date': datetime.datetime(2024, 9, 3),
-    'schedule_interval': '@hourly',
+    'schedule_interval': '@daily',
 }
 
 
